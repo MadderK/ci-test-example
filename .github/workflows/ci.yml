@@ -8,15 +8,16 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4  # 更新到最新版本
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4  # 更新到最新版本
       with:
-        node-version: '14'
+        node-version: '16'  # 升级到 Node.js 16+
+        cache: 'npm'  # 添加依赖缓存，加速后续构建
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci  # 使用 ci 替代 install，确保确定性安装
 
     - name: Run tests
       run: npm test
