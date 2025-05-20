@@ -1,4 +1,4 @@
-// app.test.mjs
+
 import add from '../app.js';  // 确保路径正确
 import { expect } from 'chai'; // 使用 ESM 导入
 
